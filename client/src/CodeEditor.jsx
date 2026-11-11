@@ -9,7 +9,7 @@ import { oneDark } from '@codemirror/theme-one-dark';
 // import { SocketContext } from './context/SocketProvider';
 import { useSocket } from './context/useSocket';
 
-const CodeEditor = ({ content, onChange,runtimes }) => {
+const CodeEditor = ({ content, onChange,runtimes  }) => {
   const { socket } = useSocket(); // Access the socket context
   const [code, setCode] = useState(content);
   const [language, setLanguage] = useState('javascript');
