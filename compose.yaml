@@ -1,0 +1,21 @@
+
+services:
+  server:
+    build:
+      context: ./server
+    image: collabspace-server:local
+    container_name: collabspace-server
+    expose:
+         - "4000"
+    environment:
+        CLIENT_URL: http://localhost:8080
+
+  client:
+    build:
+      context: ./client
+    image: collabspace-client:local
+    container_name: collabspace-client
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
